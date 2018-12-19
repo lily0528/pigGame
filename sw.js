@@ -1,9 +1,8 @@
-self.addEventListener('install', event => {
-  console.log('A new service worker is installing...');
-  let cacheName = 'cache-1'
+let staticCache = 'pig-cache-5'
 
+self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open(staticCache).then(function(cache) {
       return cache.addAll(
         [
           'css/style.css',
@@ -23,7 +22,17 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  console.log('Service worker activatisng...');
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('pig-') && cacheName !== staticCache
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
+    })
+  );
 });
 
 self.addEventListener('fetch', event => {
