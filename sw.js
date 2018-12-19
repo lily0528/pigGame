@@ -16,6 +16,7 @@ self.addEventListener('install', event => {
           'images/dice-6.png',
           '/index.html',
           '/',
+          'sw.js',
         ]
       );
     })
@@ -34,12 +35,13 @@ self.addEventListener('activate', event => {
       );
     })
   );
+  return self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(function(response) {
-      return response || fetch(event.request);
+      return response || fetch(event.request)
     })
   );
 });
