@@ -1,4 +1,4 @@
-let staticCache = 'pig-cache-6'
+let staticCache = 'pig-cache-7'
 
 self.addEventListener('install', event => {
   event.waitUntil(
