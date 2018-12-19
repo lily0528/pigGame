@@ -1,0 +1,11 @@
+{
+  "name": "Pig Game",
+  "scope": "/",
+  "icons": [{
+    "src": "/images/pig.png",
+    "sizes": "152x152",
+    "type": "image/png"
+  }],
+  "display": "standalone",
+  "start_url": "/"
+}
