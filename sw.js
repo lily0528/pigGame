@@ -14,8 +14,8 @@ self.addEventListener('install', event => {
           'images/dice-4.png',
           'images/dice-5.png',
           'images/dice-6.png',
-          '/index.html',
-          '/',
+          'index.html',
+          '/piggame/',
           'sw.js',
         ]
       );
