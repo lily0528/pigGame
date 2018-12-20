@@ -1,12 +1,12 @@
 {
   "name": "Pig Game",
-  "scope": "/piggame",
+  "scope": "/piggame/",
   "icons": [{
     "src": "/piggame/images/pig.png",
     "sizes": "152x152",
     "type": "image/png"
   }],
   "display": "standalone",
-  "start_url": "/piggame",
+  "start_url": "/piggame/",
   "theme_color": "#EB4D4D"
 }
