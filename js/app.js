@@ -1,5 +1,3 @@
-
-
 const rollButton = document.querySelector('.btn-roll');
 const dice1 = document.querySelector('.dice1');
 const dice2 = document.querySelector('.dice2');
@@ -73,7 +71,6 @@ const resetGame = function(){
 newGameButton.addEventListener('click', function() {
     resetGame();
     numberOfWins = 0;
-    rulesOfTheGame();
 });
 
 rollButton.addEventListener('click', function(e) {
@@ -150,9 +147,7 @@ document.body.addEventListener('click', function(e){
     if(e.target.classList.contains('winner')) {
         resetGame();
         numberOfWins = 0;
-        rulesOfTheGame();
     }
 });
 
-rulesOfTheGame();
 
